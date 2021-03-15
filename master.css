@@ -3,4 +3,44 @@
     border: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #fff;
+}
+
+body {
+    background: #223341;
+}
+
+.simon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.simon-content {
+    display: flex;
+    flex-direction: row;
+    /* background: rgba(255, 0, 0, 0.3); */
+    width: 70%;
+    justify-content: space-between;
+    margin-top: 400px;
+}
+
+.gioca {
+    margin: 100px 0;
+    font-size: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: #3e5e79;
+}
+
+h1.input {
+    font-size: 32px;
+    background: #223341;
+    border-color: #fff;
+    color: #fff;
+}
+
+::placeholder {
+    color: #fff;
 }
