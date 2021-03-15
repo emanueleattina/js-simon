@@ -1,9 +1,5 @@
 $(document).ready(function () {
 
-    numeroRandom(0, 99);
-
-
-
     // generare 5 numeri casuali da 1 a 99
     function numeroRandom(min, max) {
         var numero = Math.floor(Math.random() * max) + min;
@@ -44,22 +40,50 @@ $(document).ready(function () {
                 $('.simon-content.input input').show();
                 $('#invia').show();
                 $('#gioca').hide();
+                $('#tempo').hide();
+                $('.simon-bottom').addClass('.visible');
             }
         }, 1000);
 
-        // Get value on button click and show alert
         $("#invia").click(function(){
-
+            // l'utente deve scrivere i 5 numeri
             var arrUtente = [$('#val0').val(), $('#val1').val(), $('#val2').val(), $('#val3').val(), $('#val4').val()];
 
+            for(i = 0; i < 5; i++)
+            {
+                arrUtente[i] = parseInt(arrUtente[i]);
+            }
+
             console.log(arrUtente);
+
+            for(i = 0; i < 5; i++)
+            {   
+                $('#ran' + i).text(arrRandom[i]);
+            }
+
+            for(i = 0; i < 5; i++)
+            {   
+                $('#ut' + i).text(arrUtente[i]);
+            }
+
+            $('.simon-bottom').show();
+
+            var corretti = [];
+            for(i = 0; i < arrRandom.length; i++) {
+               
+                    if (arrRandom[i] == arrUtente[i]) {
+                        corretti[i] = arrUtente[i];
+                    } else {
+                        corretti[i] = "!";
+                    }
+            }
+
+            for(i = 0; i < 5; i++)
+            {   
+                $('#corr' + i).text(corretti[i]);
+            }
         });
-        
-
     });
-
-    // l'utente deve scrivere i 5 numeri
     // il software dice quanti e quali numeri sono stati indovinati
 
 });
-
