@@ -68,14 +68,15 @@ $(document).ready(function () {
 
             $('.simon-bottom').show();
 
+            // il software dice quanti e quali numeri sono stati indovinati
             var corretti = [];
             for(i = 0; i < arrRandom.length; i++) {
                
-                    if (arrRandom[i] == arrUtente[i]) {
-                        corretti[i] = arrUtente[i];
-                    } else {
-                        corretti[i] = "!";
-                    }
+                if (arrRandom[i] == arrUtente[i]) {
+                    corretti[i] = arrUtente[i];
+                } else {
+                    corretti[i] = "!";
+                }
             }
 
             for(i = 0; i < 5; i++)
@@ -84,6 +85,6 @@ $(document).ready(function () {
             }
         });
     });
-    // il software dice quanti e quali numeri sono stati indovinati
+    
 
 });
